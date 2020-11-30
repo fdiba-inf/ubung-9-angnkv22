@@ -7,8 +7,8 @@ public class Ellipse {
 
   public Ellipse (){
     startPoint = new Point (0, 0);
-    a=1;
-    b=1;
+    a = 1;
+    b = 1;
   }
   public Ellipse (Point startPoint, double a, double b){
     this.startPoint = new Point (startPoint);
@@ -26,30 +26,29 @@ public class Ellipse {
   public void initialize(){
     do {
       startPoint.initialize();
-      System.out.println ("Enter a: ");
+      System.out.println("Enter a: ");
       a = Utils.INPUT.nextDouble();
-      System.out.println ("Enter b: ");
+      System.out.println("Enter b: ");
       b = Utils.INPUT.nextDouble();
-    }
-    while (!isValid());
+    } while (!isValid());
   }
   public double calculatePerimeter(){
-    return Math.PI * (3.0*(a+b) - Math.sqrt((3.0*a+b)*(a + 3.0*b)));
+    return Math.PI * (3.0*(a + b) - Math.sqrt((3.0 * a + b) *(a + 3.0*b)));
   }
   public double calculateArea (){
-    return Math.PI * a *b;
+    return Math.PI * a * b;
   }
   public String getType (){
-    return (a==b) ? "Cycle" : "Ellipse";
+    return (a == b) ? "Cycle" : "Ellipse";
   }
   public String toString (){
-    return String.format ("%s - [%s, %s], %s, P=%s, A=%s", startPoint, a, b, getType(), calculatePerimeter(), calculateArea());
+    return String.format("%s-[%s, %s], %s, P=%s, A=%s", startPoint, a, b, getType(), calculatePerimeter(), calculateArea());
   }
-  public boolean equal (Ellipse otherEllipse){
+  public boolean equal(Ellipse otherEllipse){
     boolean sameHeight = Utils.equals(a, otherEllipse.a);
     boolean sameWidth = Utils.equals(b, otherEllipse.b);
     boolean sameHeightReversed = Utils.equals(a, otherEllipse.b);
-    boolean sameWidthReversed = Utils.equals (b, otherEllipse.a);
+    boolean sameWidthReversed = Utils.equals(b, otherEllipse.a);
     return (sameHeight && sameWidth) || (sameHeightReversed && sameWidthReversed);
   }
 }
