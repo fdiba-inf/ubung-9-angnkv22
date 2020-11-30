@@ -15,10 +15,10 @@ public class Ellipse {
     this.a = a;
     this.b = b;
   }
-  public Ellipse (Ellipse otherElipse) {
-    startPoint = new Point (otherElipse.startPoint);
-    a = otherElipse.a;
-    b = otherElipse.b;
+  public Ellipse (Ellipse otherEllipse) {
+    startPoint = new Point (otherEllipse.startPoint);
+    a = otherEllipse.a;
+    b = otherEllipse.b;
   }
   public boolean isValid(){
     return a > 0 && b > 0;
@@ -45,11 +45,11 @@ public class Ellipse {
   public String toString (){
     return String.format ("%s - [%s, %s], %s, P=%s, A=%s", startPoint, a, b, getType(), calculatePerimeter(), calculateArea());
   }
-  public boolean equal (Ellipse otherElipse){
-    boolean sameHeight = Utils.equals (a, otherElipse.a);
-    boolean sameWidth = Utils.equals (b, otherElipse.b);
-    boolean sameHeightReversed = Utils.equals (a, otherElipse.b);
-    boolean sameWidthReversed = Utils.equals (b, otherElipse.a);
+  public boolean equal (Ellipse otherEllipse){
+    boolean sameHeight = Utils.equals(a, otherEllipse.a);
+    boolean sameWidth = Utils.equals(b, otherEllipse.b);
+    boolean sameHeightReversed = Utils.equals(a, otherEllipse.b);
+    boolean sameWidthReversed = Utils.equals (b, otherEllipse.a);
     return (sameHeight && sameWidth) || (sameHeightReversed && sameWidthReversed);
   }
 }
